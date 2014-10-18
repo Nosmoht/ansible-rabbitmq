@@ -1,0 +1,5 @@
+---
+- name: install
+  yum: name={{ rabbitmq_package_name }} state=installed
+  notify:
+  - start rabbitmq
