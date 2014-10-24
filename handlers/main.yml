@@ -1,12 +1,9 @@
 ---
-- name: start rabbitmq
+- name: Start RabbitMQ
   service: name={{ rabbitmq_service_name }} state=started
-
-- name: stop rabbitmq
+- name: Stop RabbitMQ
   service: name={{ rabbitmq_service_name }} state=stopped
-
-- name: restart rabbitmq
+- name: Restart RabbitMQ
   service: name={{ rabbitmq_service_name }} state=restarted
-
-- name: reload rabbitmq
+- name: Reload RabbitMQ
   service: name={{ rabbitmq_service_name }} state=reloaded
