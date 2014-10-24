@@ -4,6 +4,6 @@
 - name: Install RabbitMQ
   yum: name={{ rabbitmq_package_name }} state={{ rabbitmq_package_state }}
   notify:
-  - start rabbitmq
+  - Start RabbitMQ
 - name: Configure RabbitMQ service on boot
   service: name={{ rabbitmq_service_name }} enabled={{ rabbitmq_service_enabled }}
