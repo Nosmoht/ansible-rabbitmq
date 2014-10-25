@@ -3,7 +3,5 @@
   yum: name=erlang state=installed
 - name: Install RabbitMQ
   yum: name={{ rabbitmq_package_name }} state={{ rabbitmq_package_state }}
-  notify:
-  - Start RabbitMQ
-- name: Configure RabbitMQ service on boot
-  service: name={{ rabbitmq_service_name }} enabled={{ rabbitmq_service_enabled }}
+- name: Configure RabbitMQ service on boot and start it
+  service: name={{ rabbitmq_service_name }} enabled={{ rabbitmq_service_enabled }} state=started
