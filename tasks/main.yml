@@ -1,9 +1,12 @@
 ---
-- name: Install Erlang
-  yum: name=erlang state=installed
-
 - name: Install RabbitMQ
-  yum: name={{ rabbitmq_package_name }} state={{ rabbitmq_package_state }}
+  yum:
+    name: '{{ item.name }}'
+    state: installed
+  with_items: rabbitmq_packages
 
 - name: Start RabbitMQ service and configure on boot startup
-  service: name={{ rabbitmq_service_name }} enabled={{ rabbitmq_service_enabled }} state=started
+  service:
+    name: '{{ rabbitmq_service_name }}'
+    enabled: '{{ rabbitmq_service_enabled }}'
+    state: started

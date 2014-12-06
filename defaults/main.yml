@@ -1,6 +1,7 @@
 ---
-rabbitmq_package_name: rabbitmq-server
-rabbitmq_package_state: installed
+rabbitmq_packages:
+- erlang
+- rabbitmq-server
 rabbitmq_service_name: rabbitmq-server
 rabbitmq_service_state: running
 rabbitmq_service_enabled: true
