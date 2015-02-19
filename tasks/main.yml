@@ -2,11 +2,11 @@
 - name: Install RabbitMQ
   yum:
     name: '{{ item }}'
-    state: installed
+    state: '{{ rabbitmq_packages_state }}'
   with_items: rabbitmq_packages
 
 - name: Start RabbitMQ service and configure on boot startup
   service:
     name: '{{ rabbitmq_service_name }}'
     enabled: '{{ rabbitmq_service_enabled }}'
-    state: started
+    state: '{{ rabbitmq_service_state }}'
