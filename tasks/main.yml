@@ -1,12 +1,13 @@
 ---
-- name: Install RabbitMQ
-  yum:
-    name: '{{ item }}'
-    state: '{{ rabbitmq_packages_state }}'
-  with_items: rabbitmq_packages
+- include_vars: '{{ item }}'
+  with_first_found:
+  - 'default.yml'
 
-- name: Start RabbitMQ service and configure on boot startup
-  service:
-    name: '{{ rabbitmq_service_name }}'
-    enabled: '{{ rabbitmq_service_enabled }}'
-    state: '{{ rabbitmq_service_state }}'
+- include: install.yml
+  tags: rabbitmq_install
+
+- include: service.yml
+  tags: rabbitmq_service
+
+- include: user.yml
+  tags: rabbitmq_user

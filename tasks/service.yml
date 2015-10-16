@@ -1,0 +1,6 @@
+---
+- name: Ensure service
+  service:
+    name: '{{ rabbitmq_service_name }}'
+    enabled: '{{ rabbitmq_service_enabled }}'
+    state: '{{ rabbitmq_service_state }}'

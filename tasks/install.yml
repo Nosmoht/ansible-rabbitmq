@@ -1,0 +1,6 @@
+---
+- name: Ensure packages
+  yum:
+    name: '{{ item }}'
+    state: '{{ rabbitmq_package_state }}'
+  with_items: rabbitmq_package_names
