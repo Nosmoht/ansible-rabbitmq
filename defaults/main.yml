@@ -1,8 +1,6 @@
 ---
-rabbitmq_packages:
-- erlang
-- rabbitmq-server
-rabbitmq_packages_state: present
+rabbitmq_package_state: present
 rabbitmq_service_name: rabbitmq-server
 rabbitmq_service_state: running
 rabbitmq_service_enabled: true
+rabbitmq_users: []
