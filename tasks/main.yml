@@ -1,7 +1,11 @@
 ---
 - include_vars: '{{ item }}'
   with_first_found:
-  - 'default.yml'
+  - 'defaults.yml'
+  tags:
+  - rabbitmq_install
+  - rabbitmq_service
+  - rabbitmq_user
 
 - include: install.yml
   tags: rabbitmq_install
