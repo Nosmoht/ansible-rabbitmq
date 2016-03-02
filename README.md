@@ -10,7 +10,7 @@ rabbitmq
 Ansible role to install and configure RabbitMQ on RHEL based systems.
 
 # Requirements
-No requirements
+- Ansible >= 2.0
 
 # Variables
 | Name | Description | Default |
