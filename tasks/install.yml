@@ -1,4 +1,6 @@
 ---
 - name: Ensure packages
-  action: '{{ ansible_pkg_mgr }} name={{ item }} state={{ rabbitmq_package_state }}'
-  with_items: rabbitmq_package_names
+  package:
+    name: '{{ item }}'
+    state: '{{ rabbitmq_package_state }}'
+  with_items: '{{ rabbitmq_package_names }}'
