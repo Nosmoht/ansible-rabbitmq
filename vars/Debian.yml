@@ -1,0 +1,5 @@
+---
+rabbitmq_package_names:
+- rabbitmq-server
+rabbitmq_config_file_path: /etc/rabbitmq
+rabbitmq_config_file_name: rabbitmq-env.conf

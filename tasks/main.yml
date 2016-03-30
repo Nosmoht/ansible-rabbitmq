@@ -1,17 +1,25 @@
 ---
 - include_vars: '{{ item }}'
   with_first_found:
-  - 'defaults.yml'
+  - '{{ ansible_distribution }}{{ ansible_distribution_major_version }}.yml'
+  - '{{ ansible_distribution }}.yml'
+  - '{{ ansible_os_family }}.yml'
   tags:
   - rabbitmq_install
+  - rabbitmq_config
   - rabbitmq_service
-  - rabbitmq_user
 
 - include: install.yml
   tags: rabbitmq_install
+
+- include: config.yml
+  tags: rabbitmq_config
 
 - include: service.yml
   tags: rabbitmq_service
 
 - include: user.yml
   tags: rabbitmq_user
+
+- meta: flush_handlers
+  when: '{{ rabbitmq_flush_handlers }}'

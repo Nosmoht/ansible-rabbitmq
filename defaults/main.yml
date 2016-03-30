@@ -3,4 +3,19 @@ rabbitmq_package_state: present
 rabbitmq_service_name: rabbitmq-server
 rabbitmq_service_state: running
 rabbitmq_service_enabled: true
+rabbitmq_config_file: '{{ rabbitmq_config_file_path }}/{{ rabbitmq_config_file_name }}'
+rabbitmq_config_file_owner: root
+rabbitmq_config_file_group: root
+rabbitmq_config_file_mode: '0644'
+rabbitmq_node_name: rabbit
+rabbitmq_node_ip_address: 0.0.0.0
+rabbitmq_node_port: 5672
+rabbitmq_config:
+- param: NODENAME
+  value: '{{ rabbitmq_node_name }}'
+- param: NODE_PORT
+  value: '{{ rabbitmq_node_port }}'
+- param: NODE_IP_ADDRESS
+  value: '{{ rabbitmq_node_ip_address }}'
 rabbitmq_users: []
+rabbitmq_flush_handlers: true
