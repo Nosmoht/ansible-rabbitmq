@@ -7,7 +7,7 @@ rabbitmq_config_file: '{{ rabbitmq_config_file_path }}/{{ rabbitmq_config_file_n
 rabbitmq_config_file_owner: root
 rabbitmq_config_file_group: root
 rabbitmq_config_file_mode: '0644'
-rabbitmq_node_name: rabbit
+rabbitmq_node_name: 'rabbit@{{ ansible_hostname }}'
 rabbitmq_node_ip_address: 0.0.0.0
 rabbitmq_node_port: 5672
 rabbitmq_config:
