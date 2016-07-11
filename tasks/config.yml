@@ -8,4 +8,4 @@
     group: '{{ rabbitmq_config_file_group }}'
     mode: '{{ rabbitmq_config_file_mode }}'
   with_items: '{{ rabbitmq_config }}'
-  notify: reload rabbitmq
+  notify: restart rabbitmq
