@@ -1,5 +1,8 @@
 rabbitmq
 =========
+
+[![Build Status](https://travis-ci.org/Nosmoht/ansible-role-rabbitmq.svg?branch=master)](https://travis-ci.org/Nosmoht/ansible-role-rabbitmq)
+
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Variables](#variables)
